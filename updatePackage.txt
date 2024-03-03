@@ -1,0 +1,3 @@
+ ??npm -g i npm-check-updates
+ ncu -u
+ npm install
