@@ -5,6 +5,7 @@ export const pathsConfig: IPaths = {
 	entry: path.resolve(__dirname, './src', 'index.tsx'),
 	output: path.resolve(__dirname, './public'),
 	html: path.resolve(__dirname, './src', 'index.html'),
+	favicon: path.resolve(__dirname, './src', 'favicon.png'),
 }
 
 export const outputFileNamesConfig: IOutputFileName = {

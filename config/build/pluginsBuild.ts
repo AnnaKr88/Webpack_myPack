@@ -10,7 +10,8 @@ export function pluginsBuild({env, paths, fileNames}: IWebpackBuild): webpack.Co
 	const isProd = env.mode === 'production'
 
 	const html = new HtmlPlugin({
-		template: paths.html
+		template: paths.html,
+		favicon: paths.favicon
 	})
 
 	const definePlugin = new webpack.DefinePlugin({
