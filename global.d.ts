@@ -5,6 +5,15 @@ declare module '*.module.css'{
 	const classNames:IClassName
 	export = classNames
 }
+
+declare module '*.module.less'{
+	interface IClassName{
+		[className:string]:string;
+	}
+	const classNames:IClassName
+	export = classNames
+}
+
 declare module '*.png'
 declare module '*.jpg'
 declare module '*.jpeg'

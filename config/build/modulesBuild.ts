@@ -60,6 +60,28 @@ export function modulesBuild({env, fileNames}: IWebpackBuild): webpack.ModuleOpt
 		]
 	}
 
+	const lessLoader = {
+		test: /\.less$/i,
+		use: [
+			isProd ? MiniCssExtractPlugin.loader : 'style-loader', 
+			{
+				loader: 'css-loader',
+				options: {
+					sourceMap: true,
+					modules: {
+						localIdentName: fileNames.cssModule
+					}
+				}
+			},
+			{
+				loader: 'less-loader',
+				options: {
+					sourceMap: true
+				}
+			}
+		]
+	}
+
 	const imageLoader = {
 		test: /\.(png|jpeg|jpg|gif)$/,
 		type: 'asset/resource'
@@ -96,6 +118,7 @@ export function modulesBuild({env, fileNames}: IWebpackBuild): webpack.ModuleOpt
 		rules: [
 			babelLoader,
 			styleLoader,
+			lessLoader,
 			imageLoader,
 			svgrLoader,
 			fontsLoader
